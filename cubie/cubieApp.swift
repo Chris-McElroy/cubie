@@ -11,7 +11,7 @@ import SwiftUI
 struct cubieApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AlgMenuView()
         }
     }
 }
