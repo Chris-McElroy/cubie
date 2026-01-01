@@ -8,79 +8,50 @@
 import SwiftUI
 
 struct ContentView: View {
+    let colorDict: [Int: [Color]] = [
+        0: [.blue, .green],
+        1: [.pink, .black],
+        2: [.purple, .purple],
+        8: [.red, .yellow],
+        9: [.black, .brown],
+        10: [.orange, .orange],
+    ]
     
-    let layer: Int
-    let colorA: Color
-    let colorB: Color
+    @State var layer: Int = 0
     
-    
-    @State var sizeA: CGFloat = 100
-    @State var sizeB: CGFloat = 100
-    
-    
-    @State var zIndexA: CGFloat = 3
-    @State var zIndexB: CGFloat = 3
     
     var body: some View {
-        ZStack() {
-            Color.black.zIndex(-10)
-            if layer == 1 {
-                ContentView(layer: 2, colorA: .pink, colorB: .black)
-                    .zIndex(zIndexA+CGFloat(layer)*10)
-                    .mask {
-                        Rectangle()
-                            .foregroundStyle(Color.blue)
-                            .frame(width: sizeA, height: sizeA)
-                            .padding(.trailing, 500-sizeA/2)
-                            .padding(.all, 100-sizeA/2)
-                            .zIndex(zIndexA+5+CGFloat(layer)*10)
+        ZStack {
+            Color.black
+            HStack(spacing: 20) {
+                Rectangle()
+                    .foregroundStyle(colorDict[layer]![0])
+                    .frame(width: 100, height: 100)
+                    .onTapGesture {
+                        switch layer {
+                        case 0: layer = 1
+                        case 1: layer = 8
+                        case 8: layer = 9
+                        default: break
+                        }
+                    }
+                Rectangle()
+                    .foregroundStyle(colorDict[layer]![1])
+                    .frame(width: 100, height: 100)
+                    .onTapGesture {
+                        switch layer {
+                        case 0: layer = 2
+                        case 8: layer = 10
+                        default: break
+                        }
                     }
             }
-            Rectangle()
-                .stroke(colorA, lineWidth: 50)
-                .frame(width: sizeA-50, height: sizeA-50)
-                .padding(.trailing, 500-sizeA/2)
-                .padding(.all, 100-sizeA/2)
-                .zIndex(zIndexA+1+CGFloat(layer)*10)
-                .onTapGesture {
-                    zIndexA = 6
-                    zIndexB = 3
-                    withAnimation(.easeIn(duration: 0.3)) {
-                        sizeA = 1000
-                    }
-                }
-            if layer == 1 {
-                ContentView(layer: 2, colorA: .purple, colorB: .purple)
-                    .zIndex(zIndexB+CGFloat(layer)*10)
-                    .mask {
-                        Rectangle()
-                            .foregroundStyle(Color.blue)
-                            .frame(width: sizeB, height: sizeB)
-                            .padding(.leading, 500-sizeB/2)
-                            .padding(.all, 100-sizeB/2)
-                            .zIndex(zIndexB+CGFloat(layer)*10)
-                    }
-            }
-            Rectangle()
-                .stroke(colorB, lineWidth: 50)
-                .frame(width: sizeB-50, height: sizeB-50)
-                .padding(.leading, 500-sizeB/2)
-                .padding(.all, 100-sizeB/2)
-                .zIndex(zIndexB+1+CGFloat(layer)*10)
-                .onTapGesture {
-                    zIndexB = 6
-                    zIndexA = 3
-                    withAnimation(.easeIn(duration: 0.3)) {
-                        sizeB = 1000
-                    }
-                }
             Button(action: restoreSizes) {
                 Color.red
                     .overlay {
                         Text("back")
                     }
             }
-            .zIndex(100)
             .buttonStyle(PlainButtonStyle())
             .focusEffectDisabled()
             .frame(width: 100, height: 40)
@@ -89,11 +60,11 @@ struct ContentView: View {
     }
     
     func restoreSizes() {
-        zIndexA = 3
-        zIndexB = 3
-        withAnimation(.easeOut(duration: 0.2)) {
-            sizeA = 100
-            sizeB = 100
+        switch layer {
+        case 8: layer = 1
+        case 9: layer = 8
+        case 10: layer = 8
+        default: layer = 0; break
         }
     }
 }
