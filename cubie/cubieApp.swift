@@ -11,7 +11,10 @@ import SwiftUI
 struct cubieApp: App {
     var body: some Scene {
         WindowGroup {
-            AlgMenuView()
+            ZStack {
+                Color.black
+                AlgMenuView()
+            }
         }
     }
 }
