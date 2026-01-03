@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct SubMenuOptionView: View, MenuOptionView {
+struct SubMenuOptionView: MenuOptionView {
     let title: String
     let header: String
-    let subOptions: [MenuOptionView]
+    let subOptions: [any MenuOptionView]
     
     var body: some View {
         ZStack {
@@ -22,3 +22,5 @@ struct SubMenuOptionView: View, MenuOptionView {
         }
     }
 }
+
+typealias AlgSet = SubMenuOptionView

@@ -9,20 +9,8 @@ import SwiftUI
 
 struct AlgMenuView: View {
     @State var header: String = "where is the bottom right corner facing?"
-    @State var options: [MenuOptionView] = [
-        SubMenuOptionView(title: "U right", header: "what?", subOptions: [
-            SubMenuOptionView(title: "U left", header: "where?", subOptions: []),
-            SubMenuOptionView(title: "D up", header: "where?", subOptions: []),
-        ]),
-        SubMenuOptionView(title: "U left", header: "what?", subOptions: [
-            AlgMenuOptionView(title: "cool!")
-        ]),
-        SubMenuOptionView(title: "U down", header: "what?", subOptions: []),
-        SubMenuOptionView(title: "D down", header: "what?", subOptions: []),
-        SubMenuOptionView(title: "D left", header: "what?", subOptions: []),
-        SubMenuOptionView(title: "D right", header: "what?", subOptions: []),
-    ]
-    
+    @State var options: [any MenuOptionView] = Storage.main.currentAlgSet?.subOptions ?? []
+    @State var storage: Storage = Storage.main
     
     var body: some View {
         VStack {
@@ -30,17 +18,17 @@ struct AlgMenuView: View {
                 .onTapGesture {
                     header = "where is the bottom right corner facing?"
                     options = [
-                        SubMenuOptionView(title: "U right", header: "what?", subOptions: [
-                            SubMenuOptionView(title: "U left", header: "where?", subOptions: []),
-                            SubMenuOptionView(title: "D up", header: "where?", subOptions: []),
-                        ]),
-                        SubMenuOptionView(title: "U left", header: "what?", subOptions: [
-                            AlgMenuOptionView(title: "cool!")
-                        ]),
-                        SubMenuOptionView(title: "U down", header: "what?", subOptions: []),
-                        SubMenuOptionView(title: "D down", header: "what?", subOptions: []),
-                        SubMenuOptionView(title: "D left", header: "what?", subOptions: []),
-                        SubMenuOptionView(title: "D right", header: "what?", subOptions: []),
+//                        SubMenuOptionView(title: "U right", header: "what?", subOptions: [
+//                            SubMenuOptionView(title: "U left", header: "where?", subOptions: []),
+//                            SubMenuOptionView(title: "D up", header: "where?", subOptions: []),
+//                        ]),
+//                        SubMenuOptionView(title: "U left", header: "what?", subOptions: [
+//                            AlgMenuOptionView(title: "cool!")
+//                        ]),
+//                        SubMenuOptionView(title: "U down", header: "what?", subOptions: []),
+//                        SubMenuOptionView(title: "D down", header: "what?", subOptions: []),
+//                        SubMenuOptionView(title: "D left", header: "what?", subOptions: []),
+//                        SubMenuOptionView(title: "D right", header: "what?", subOptions: []),
                     ]
                 }
             Spacer()

@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct AlgMenuOptionView: View, MenuOptionView {
+struct AlgMenuOptionView: MenuOptionView {
     let title: String
+    let alg: Alg
     
     var body: some View {
         ZStack {

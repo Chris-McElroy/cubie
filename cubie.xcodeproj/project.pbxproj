@@ -6,17 +6,28 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		8345A0312F0812E700E355D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8345A02C2F0812E700E355D9 /* Assets.xcassets */; };
+		8345A0322F0812E700E355D9 /* AlgMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345A02A2F0812E700E355D9 /* AlgMenuOptionView.swift */; };
+		8345A0332F0812E700E355D9 /* AlgMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345A02B2F0812E700E355D9 /* AlgMenuView.swift */; };
+		8345A0342F0812E700E355D9 /* cubieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345A02D2F0812E700E355D9 /* cubieApp.swift */; };
+		8345A0352F0812E700E355D9 /* MenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345A02E2F0812E700E355D9 /* MenuOptionView.swift */; };
+		8345A0362F0812E700E355D9 /* SubMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345A02F2F0812E700E355D9 /* SubMenuOptionView.swift */; };
+		8345A03C2F085B3B00E355D9 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345A03B2F085B3900E355D9 /* Storage.swift */; };
+		8345A03E2F085B3F00E355D9 /* Alg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345A03D2F085B3D00E355D9 /* Alg.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		8345A02A2F0812E700E355D9 /* AlgMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgMenuOptionView.swift; sourceTree = "<group>"; };
+		8345A02B2F0812E700E355D9 /* AlgMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgMenuView.swift; sourceTree = "<group>"; };
+		8345A02C2F0812E700E355D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8345A02D2F0812E700E355D9 /* cubieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cubieApp.swift; sourceTree = "<group>"; };
+		8345A02E2F0812E700E355D9 /* MenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionView.swift; sourceTree = "<group>"; };
+		8345A02F2F0812E700E355D9 /* SubMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubMenuOptionView.swift; sourceTree = "<group>"; };
+		8345A03B2F085B3900E355D9 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		8345A03D2F085B3D00E355D9 /* Alg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alg.swift; sourceTree = "<group>"; };
 		835CC17F2F01F95100244E0A /* cubie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cubie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		835CC1812F01F95100244E0A /* cubie */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = cubie;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		835CC17C2F01F95100244E0A /* Frameworks */ = {
@@ -29,10 +40,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8345A0302F0812E700E355D9 /* cubie */ = {
+			isa = PBXGroup;
+			children = (
+				8345A02D2F0812E700E355D9 /* cubieApp.swift */,
+				8345A03A2F085B3100E355D9 /* Helpers */,
+				8345A0392F08132B00E355D9 /* AlgSets */,
+				8345A02C2F0812E700E355D9 /* Assets.xcassets */,
+			);
+			path = cubie;
+			sourceTree = "<group>";
+		};
+		8345A0382F08130B00E355D9 /* MenuOptions */ = {
+			isa = PBXGroup;
+			children = (
+				8345A02E2F0812E700E355D9 /* MenuOptionView.swift */,
+				8345A02F2F0812E700E355D9 /* SubMenuOptionView.swift */,
+				8345A02A2F0812E700E355D9 /* AlgMenuOptionView.swift */,
+			);
+			path = MenuOptions;
+			sourceTree = "<group>";
+		};
+		8345A0392F08132B00E355D9 /* AlgSets */ = {
+			isa = PBXGroup;
+			children = (
+				8345A02B2F0812E700E355D9 /* AlgMenuView.swift */,
+				8345A0382F08130B00E355D9 /* MenuOptions */,
+			);
+			path = AlgSets;
+			sourceTree = "<group>";
+		};
+		8345A03A2F085B3100E355D9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8345A03D2F085B3D00E355D9 /* Alg.swift */,
+				8345A03B2F085B3900E355D9 /* Storage.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		835CC1762F01F95100244E0A = {
 			isa = PBXGroup;
 			children = (
-				835CC1812F01F95100244E0A /* cubie */,
+				8345A0302F0812E700E355D9 /* cubie */,
 				835CC1802F01F95100244E0A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,9 +109,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				835CC1812F01F95100244E0A /* cubie */,
 			);
 			name = cubie;
 			packageProductDependencies = (
@@ -109,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8345A0312F0812E700E355D9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +167,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8345A03E2F085B3F00E355D9 /* Alg.swift in Sources */,
+				8345A0322F0812E700E355D9 /* AlgMenuOptionView.swift in Sources */,
+				8345A0332F0812E700E355D9 /* AlgMenuView.swift in Sources */,
+				8345A0342F0812E700E355D9 /* cubieApp.swift in Sources */,
+				8345A0352F0812E700E355D9 /* MenuOptionView.swift in Sources */,
+				8345A0362F0812E700E355D9 /* SubMenuOptionView.swift in Sources */,
+				8345A03C2F085B3B00E355D9 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

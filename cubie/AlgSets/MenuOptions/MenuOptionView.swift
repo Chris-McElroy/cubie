@@ -7,6 +7,6 @@
 
 import SwiftUI
 
-protocol MenuOptionView {
+protocol MenuOptionView: View {
     var title: String { get }
 }
