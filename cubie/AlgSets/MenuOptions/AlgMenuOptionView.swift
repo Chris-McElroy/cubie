@@ -19,5 +19,6 @@ struct AlgMenuOptionView: MenuOptionView {
                 .shadow(color: .blue, radius: 5)
             Text(title)
         }
+        .frame(width: 200, height: 200)
     }
 }

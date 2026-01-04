@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8322DCB62F0AB96E009B8371 /* MenuOptionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8322DCB52F0AB964009B8371 /* MenuOptionPopup.swift */; };
+		8322DCB82F0AB98C009B8371 /* AlgPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8322DCB72F0AB988009B8371 /* AlgPopup.swift */; };
 		8345A0312F0812E700E355D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8345A02C2F0812E700E355D9 /* Assets.xcassets */; };
 		8345A0322F0812E700E355D9 /* AlgMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345A02A2F0812E700E355D9 /* AlgMenuOptionView.swift */; };
 		8345A0332F0812E700E355D9 /* AlgMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345A02B2F0812E700E355D9 /* AlgMenuView.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8322DCB52F0AB964009B8371 /* MenuOptionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionPopup.swift; sourceTree = "<group>"; };
+		8322DCB72F0AB988009B8371 /* AlgPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgPopup.swift; sourceTree = "<group>"; };
 		8345A02A2F0812E700E355D9 /* AlgMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgMenuOptionView.swift; sourceTree = "<group>"; };
 		8345A02B2F0812E700E355D9 /* AlgMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgMenuView.swift; sourceTree = "<group>"; };
 		8345A02C2F0812E700E355D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 			isa = PBXGroup;
 			children = (
 				8345A02B2F0812E700E355D9 /* AlgMenuView.swift */,
+				8322DCB52F0AB964009B8371 /* MenuOptionPopup.swift */,
+				8322DCB72F0AB988009B8371 /* AlgPopup.swift */,
 				8345A0382F08130B00E355D9 /* MenuOptions */,
 			);
 			path = AlgSets;
@@ -169,11 +175,13 @@
 			files = (
 				8345A03E2F085B3F00E355D9 /* Alg.swift in Sources */,
 				8345A0322F0812E700E355D9 /* AlgMenuOptionView.swift in Sources */,
+				8322DCB82F0AB98C009B8371 /* AlgPopup.swift in Sources */,
 				8345A0332F0812E700E355D9 /* AlgMenuView.swift in Sources */,
 				8345A0342F0812E700E355D9 /* cubieApp.swift in Sources */,
 				8345A0352F0812E700E355D9 /* MenuOptionView.swift in Sources */,
 				8345A0362F0812E700E355D9 /* SubMenuOptionView.swift in Sources */,
 				8345A03C2F085B3B00E355D9 /* Storage.swift in Sources */,
+				8322DCB62F0AB96E009B8371 /* MenuOptionPopup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

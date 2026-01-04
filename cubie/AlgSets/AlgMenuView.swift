@@ -8,72 +8,87 @@
 import SwiftUI
 
 struct AlgMenuView: View {
-    @State var header: String = "where is the bottom right corner facing?"
+    @State var header: String = Storage.main.currentAlgSet?.header ?? ""
     @State var options: [any MenuOptionView] = Storage.main.currentAlgSet?.subOptions ?? []
     @State var storage: Storage = Storage.main
+    @State var editing: Bool = false
+    @State var popup: some View = Spacer()
     
     var body: some View {
+        ZStack {
+            Color.black
+            VStack {
+                Text(header)
+                    .onTapGesture {
+                        if editing {
+                            editing = false
+                            return
+                        }
+                        header = Storage.main.currentAlgSet?.header ?? ""
+                        options = Storage.main.currentAlgSet?.subOptions ?? []
+                    }
+                Spacer()
+                Grid(horizontalSpacing: 100, verticalSpacing: 100) {
+                    GridRow {
+                        ForEach(0..<4) { i in
+                            getGridItem(i)
+                        }
+                    }
+                    GridRow {
+                        ForEach(4..<8) { i in
+                            getGridItem(i)
+                        }
+                    }
+                }
+                Spacer()
+            }
+            .padding(100)
+            .padding()
+            popup
+        }
+        .onTapGesture {
+            editing = false
+        }
+        .onLongPressGesture(minimumDuration: 1.0) {
+            editing = true
+        }
+    }
+    
+    func getGridItem(_ i: Int) -> some View {
         VStack {
-            Text(header)
-                .onTapGesture {
-                    header = "where is the bottom right corner facing?"
-                    options = [
-//                        SubMenuOptionView(title: "U right", header: "what?", subOptions: [
-//                            SubMenuOptionView(title: "U left", header: "where?", subOptions: []),
-//                            SubMenuOptionView(title: "D up", header: "where?", subOptions: []),
-//                        ]),
-//                        SubMenuOptionView(title: "U left", header: "what?", subOptions: [
-//                            AlgMenuOptionView(title: "cool!")
-//                        ]),
-//                        SubMenuOptionView(title: "U down", header: "what?", subOptions: []),
-//                        SubMenuOptionView(title: "D down", header: "what?", subOptions: []),
-//                        SubMenuOptionView(title: "D left", header: "what?", subOptions: []),
-//                        SubMenuOptionView(title: "D right", header: "what?", subOptions: []),
-                    ]
-                }
-            Spacer()
-            Grid(horizontalSpacing: 100, verticalSpacing: 100) {
-                GridRow {
-                    ForEach(0..<4) { i in
-                        if options.count >= (8 - i) {
-                            if let subMenuOption = options[8 - i - 1] as? SubMenuOptionView {
-                                subMenuOption
-                                    .onTapGesture {
-                                        options = subMenuOption.subOptions
-                                    }
-                            } else if let algMenuOption = options[8 - i - 1] as? AlgMenuOptionView {
-                                algMenuOption
-                                    .onTapGesture {
-                                        print(algMenuOption.title)
-                                    }
-                            }
-                        } else {
-                            SubMenuOptionView(title: "", header: "", subOptions: [])
+            if i == 7 && options.isEmpty {
+                addMenuOption
+            } else if editing && options.count < 8 && options.count == 8 - i - 1 {
+                addMenuOption
+            } else if options.count >= (8 - i) {
+                if let subMenuOption = options[8 - i - 1] as? SubMenuOptionView {
+                    subMenuOption
+                        .onTapGesture {
+                            options = subMenuOption.subOptions
                         }
-                    }
-                }
-                GridRow {
-                    ForEach(4..<8) { i in
-                        if options.count >= (8 - i) {
-                            if let subMenuOption = options[8 - i - 1] as? SubMenuOptionView {
-                                subMenuOption
-                                    .onTapGesture {
-                                        options = subMenuOption.subOptions
-                                    }
-                            } else if let algMenuOption = options[8 - i - 1] as? AlgMenuOptionView {
-                                algMenuOption
-                                    .onTapGesture {
-                                        print(algMenuOption.title)
-                                    }
-                            }
-                        } else {
-                            SubMenuOptionView(title: "", header: "", subOptions: [])
+                } else if let algMenuOption = options[8 - i - 1] as? AlgMenuOptionView {
+                    algMenuOption
+                        .onTapGesture {
+                            print(algMenuOption.title)
                         }
-                    }
                 }
+            } else {
+                SubMenuOptionView(title: "", header: "", subOptions: [])
             }
         }
-        .padding(100)
-        .padding()
+    }
+    
+    var addMenuOption: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .foregroundStyle(Color(hue: 1, saturation: 0, brightness: 0.1))
+                .aspectRatio(1.0, contentMode: .fit)
+                .shadow(color: .green, radius: 5)
+            Text("add")
+        }
+        .frame(width: 200, height: 200)
+        .onTapGesture {
+            popup = MenuOptionPopup()
+        }
     }
 }

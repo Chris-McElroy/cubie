@@ -20,6 +20,7 @@ struct SubMenuOptionView: MenuOptionView {
                 .shadow(color: .yellow, radius: 5)
             Text(title)
         }
+        .frame(width: 200, height: 200)
     }
 }
 

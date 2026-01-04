@@ -49,7 +49,6 @@ class Storage {
             algSetDict.append(menuOptionToDict(algSet))
         }
         
-        print(algSetDict)
         save(algSetDict, as: .algsets)
     }
     
