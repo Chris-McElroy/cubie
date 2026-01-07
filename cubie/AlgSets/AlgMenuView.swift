@@ -12,7 +12,8 @@ struct AlgMenuView: View {
     @State var options: [any MenuOptionView] = Storage.main.currentAlgSet?.subOptions ?? []
     @State var storage: Storage = Storage.main
     @State var editing: Bool = false
-    @State var popup: some View = Spacer()
+    @State var popupType: PopupType = .none
+    @State var selectedItem: Int? = nil
     
     var body: some View {
         ZStack {
@@ -44,7 +45,7 @@ struct AlgMenuView: View {
             }
             .padding(100)
             .padding()
-            popup
+//            popup
         }
         .onTapGesture {
             editing = false
@@ -88,7 +89,37 @@ struct AlgMenuView: View {
         }
         .frame(width: 200, height: 200)
         .onTapGesture {
-            popup = MenuOptionPopup()
+//            popup = MenuOptionPopup()
         }
     }
+    
+    var popup: some View {
+        ZStack {
+            Color.gray
+                .border(.tertiary, width: 3)
+            if popupType == .addNewMenu {
+                EditMenuOption(menuOption: options[selectedItem ?? 0] as? SubMenuOptionView ?? SubMenuOptionView(title: "", header: "", subOptions: []))
+                    .onDisappear {
+                        options[selectedItem] = ??
+                    }
+            } else if popupType == .copyExistingMenu {
+                
+            } else if popupType == .addNewAlg {
+                
+            } else if popupType == .useExistingAlg {
+                
+            } else if popupType == .editMenuOption {
+                
+            } else if popupType == .editAlg {
+                
+            }
+        }
+        .offset(y: popupType == .none ? 500 : 0)
+        .padding(.horizontal, 3)
+        .padding(.top, 3)
+    }
+}
+
+enum PopupType {
+    case none, addNewMenu, copyExistingMenu, addNewAlg, useExistingAlg, editMenuOption, editAlg
 }

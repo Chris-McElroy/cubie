@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8322DCB62F0AB96E009B8371 /* MenuOptionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8322DCB52F0AB964009B8371 /* MenuOptionPopup.swift */; };
-		8322DCB82F0AB98C009B8371 /* AlgPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8322DCB72F0AB988009B8371 /* AlgPopup.swift */; };
+		8322DCB62F0AB96E009B8371 /* EditMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8322DCB52F0AB964009B8371 /* EditMenuOption.swift */; };
+		8322DCB82F0AB98C009B8371 /* EditAlg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8322DCB72F0AB988009B8371 /* EditAlg.swift */; };
+		8322DCBB2F0EA2F9009B8371 /* ChooseMenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8322DCBA2F0EA2F2009B8371 /* ChooseMenuOption.swift */; };
+		8322DCBD2F0EA304009B8371 /* ChooseAlg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8322DCBC2F0EA300009B8371 /* ChooseAlg.swift */; };
 		8345A0312F0812E700E355D9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8345A02C2F0812E700E355D9 /* Assets.xcassets */; };
 		8345A0322F0812E700E355D9 /* AlgMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345A02A2F0812E700E355D9 /* AlgMenuOptionView.swift */; };
 		8345A0332F0812E700E355D9 /* AlgMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8345A02B2F0812E700E355D9 /* AlgMenuView.swift */; };
@@ -20,8 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8322DCB52F0AB964009B8371 /* MenuOptionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOptionPopup.swift; sourceTree = "<group>"; };
-		8322DCB72F0AB988009B8371 /* AlgPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgPopup.swift; sourceTree = "<group>"; };
+		8322DCB52F0AB964009B8371 /* EditMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMenuOption.swift; sourceTree = "<group>"; };
+		8322DCB72F0AB988009B8371 /* EditAlg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAlg.swift; sourceTree = "<group>"; };
+		8322DCBA2F0EA2F2009B8371 /* ChooseMenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMenuOption.swift; sourceTree = "<group>"; };
+		8322DCBC2F0EA300009B8371 /* ChooseAlg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseAlg.swift; sourceTree = "<group>"; };
 		8345A02A2F0812E700E355D9 /* AlgMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgMenuOptionView.swift; sourceTree = "<group>"; };
 		8345A02B2F0812E700E355D9 /* AlgMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgMenuView.swift; sourceTree = "<group>"; };
 		8345A02C2F0812E700E355D9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +48,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8322DCB92F0EA2B9009B8371 /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				8322DCB52F0AB964009B8371 /* EditMenuOption.swift */,
+				8322DCBA2F0EA2F2009B8371 /* ChooseMenuOption.swift */,
+				8322DCB72F0AB988009B8371 /* EditAlg.swift */,
+				8322DCBC2F0EA300009B8371 /* ChooseAlg.swift */,
+			);
+			path = Popups;
+			sourceTree = "<group>";
+		};
 		8345A0302F0812E700E355D9 /* cubie */ = {
 			isa = PBXGroup;
 			children = (
@@ -69,8 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				8345A02B2F0812E700E355D9 /* AlgMenuView.swift */,
-				8322DCB52F0AB964009B8371 /* MenuOptionPopup.swift */,
-				8322DCB72F0AB988009B8371 /* AlgPopup.swift */,
+				8322DCB92F0EA2B9009B8371 /* Popups */,
 				8345A0382F08130B00E355D9 /* MenuOptions */,
 			);
 			path = AlgSets;
@@ -175,13 +189,15 @@
 			files = (
 				8345A03E2F085B3F00E355D9 /* Alg.swift in Sources */,
 				8345A0322F0812E700E355D9 /* AlgMenuOptionView.swift in Sources */,
-				8322DCB82F0AB98C009B8371 /* AlgPopup.swift in Sources */,
+				8322DCB82F0AB98C009B8371 /* EditAlg.swift in Sources */,
 				8345A0332F0812E700E355D9 /* AlgMenuView.swift in Sources */,
 				8345A0342F0812E700E355D9 /* cubieApp.swift in Sources */,
 				8345A0352F0812E700E355D9 /* MenuOptionView.swift in Sources */,
+				8322DCBB2F0EA2F9009B8371 /* ChooseMenuOption.swift in Sources */,
 				8345A0362F0812E700E355D9 /* SubMenuOptionView.swift in Sources */,
 				8345A03C2F085B3B00E355D9 /* Storage.swift in Sources */,
-				8322DCB62F0AB96E009B8371 /* MenuOptionPopup.swift in Sources */,
+				8322DCB62F0AB96E009B8371 /* EditMenuOption.swift in Sources */,
+				8322DCBD2F0EA304009B8371 /* ChooseAlg.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

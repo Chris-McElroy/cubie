@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SubMenuOptionView: MenuOptionView {
-    let title: String
-    let header: String
-    let subOptions: [any MenuOptionView]
+    var title: String
+    var header: String
+    var subOptions: [any MenuOptionView]
     
     var body: some View {
         ZStack {

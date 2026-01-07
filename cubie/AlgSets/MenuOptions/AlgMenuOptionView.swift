@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct AlgMenuOptionView: MenuOptionView {
-    let title: String
-    let alg: Alg
+    var title: String
+    var alg: Alg
     
     var body: some View {
         ZStack {
