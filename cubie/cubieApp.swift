@@ -6,14 +6,21 @@
 //
 
 import SwiftUI
+import RealityKit
 
 @main
 struct cubieApp: App {
-    var body: some Scene {
+    @State var angle: CGFloat = 45.0
+    
+    var body: some SwiftUI.Scene {
         WindowGroup {
             ZStack {
                 Color.black
-                AlgMenuView()
+                TestView()
+                VStack {
+                    Text("testing")
+                    Spacer()
+                }
             }
         }
     }
