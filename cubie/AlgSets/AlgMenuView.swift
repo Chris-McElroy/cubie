@@ -41,6 +41,7 @@ struct TestView: View {
             plane3.transform.rotation = simd_quatf(angle: -.pi/2, axis: [0,1,0])
             plane3.generateCollisionShapes(recursive: false)
             plane3.name = "yellow"
+            
             entity.addChild(plane3)
             
             content.add(entity)
@@ -54,6 +55,12 @@ struct TestView: View {
             print(path.entity.name)
             
         })
+    }
+}
+
+extension ModelEntity {
+    var piece: Int {
+        Int(self.transform.translation.x)
     }
 }
 
